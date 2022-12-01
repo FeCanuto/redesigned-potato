@@ -1,0 +1,10 @@
+energy.prosumerCount.call().then(result => result.toNumber())
+await energy.setProsumer(accounts[1], 123, 100, 150, {from:accounts[0]})
+(await energy.pagarProsumerOwner(accounts[1]))
+energy.info.call().then(result => web3.utils.toBN(result).toString())
+energy.info.call().then(result => web3.utils.isBN(result))
+Object.keys(energy)
+
+renew.approve(energy.address, 500000)
+
+renew.balanceOf.call(accounts[0]).then(result => web3.utils.toBN(result).toString())
