@@ -18,13 +18,15 @@
       </mat-list-item>
       <mat-list-item [routerLink]="['/money']">
         <mat-icon>money</mat-icon>
-        Transactions
+        Transações
       </mat-list-item>
       <mat-list-item [routerLink]="['/operations']">
         <mat-icon>code</mat-icon>
         Operações
       </mat-list-item>
-      <app-theme-switch></app-theme-switch>
+      <mat-list-item>
+        <app-theme-switch></app-theme-switch>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
