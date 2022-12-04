@@ -9,21 +9,6 @@ contract EnergyTrade{
 
     IERC20 private _token;
 
-    /*event DoneStuff(address from);  
-
-    constructor(IERC20 token){
-        owner = msg.sender;
-        _token = token;
-    }
-
-    function doStuff() external {
-        address from = msg.sender;
-
-        _token.transferFrom(from, address(this), 1000);
-
-        emit DoneStuff(from);
-    }*/
-
     struct Prosumer{
         uint16 uc;               //Unidade consumidora
         uint16 energiaConsumida; //Energia consumida em Kwh
