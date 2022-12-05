@@ -48,19 +48,12 @@ export class RenewableContractService {
     });
   }
 
-  async connectAccount() {
-    this.provider = await this.web3Modal.connect(); // set provider
-    this.web3js = new Web3(this.provider); // create web3 instance
-    this.accounts = await this.web3js.eth.getAccounts();
-    return this.accounts;
-  }
-
   settingProsumer(
-    originAccount,
-    prosumerAddress,
-    unidadeConsumidora,
-    energiaConsumida,
-    energiaInjetada
+    originAccount: any[],
+    prosumerAddress: string,
+    unidadeConsumidora: number,
+    energiaConsumida: number,
+    energiaInjetada: number
   ) {
     return new Promise((resolve, reject) => {
       var contract = require("@truffle/contract");
@@ -100,5 +93,18 @@ export class RenewableContractService {
   success() {
     const snackbarRef = this.snackbar.open("Transaction complete successfully");
     snackbarRef.dismiss();
+  }
+
+  async connectAccount() {
+    this.provider = await this.web3Modal.connect(); // set provider
+    this.web3js = new Web3(this.provider); // create web3 instance
+    this.accounts = await this.web3js.eth.getAccounts();
+    return this.accounts;
+  }
+  
+  async accountInfo(accounts){
+    const initialvalue = await this.web3js.eth.getBalance(accounts[0]);
+    this.balance = this.web3js.utils.fromWei(initialvalue , 'ether');
+    return this.balance;
   }
 }
