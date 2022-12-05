@@ -17,7 +17,7 @@ import { UiRoute} from "./ui.routes";
 import { RouterModule} from "@angular/router";
 
 // Services
-import { ContractService } from "../services/contract/contract.service";
+import { RenewableContractService } from "../services/contract/renewable.contract.service";
 import { ThreeBox } from "../services/3box.service";
 
 @NgModule({
@@ -40,7 +40,7 @@ import { ThreeBox } from "../services/3box.service";
     HomeComponent
   ],
   providers: [
-    ContractService,
+    RenewableContractService,
     ThreeBox
   ],
 })
