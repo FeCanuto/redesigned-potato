@@ -47,10 +47,6 @@ contract EnergyTrade{
 
     }
 
-    function setAdmin(address endereco, uint256 value) public isOwner{
-        _token.approve(endereco, value);
-    }
-
     function pagarProsumerOwner(address endereco) public isOwner{
         require(addressToProsumer[endereco].energiaInjetada > addressToProsumer[endereco].energiaConsumida, "Energia consumida maior que a injetada");
 
