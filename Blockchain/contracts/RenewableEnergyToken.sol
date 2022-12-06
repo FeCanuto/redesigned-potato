@@ -30,7 +30,6 @@ contract RenewableEnergyToken is IERC20 {
   string public constant symbol = "RET";
   uint8 public constant decimals = 2;  //Padrão do Ether é 18
   uint256 private totalsupply;
-  address private admin;
 
   mapping(address => uint256) private addressToBalance;
 
